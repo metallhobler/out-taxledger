@@ -9,15 +9,9 @@
       "email": "mwieber85@googlemail.com"
     }
   ],
-  "repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com"
-    }
-],
   "autoload": {
     "psr-4": {
-      "Seat\\Metallhobler\\OUT-TaxLedger\\": "src/"
+      "metallhobler\\Seat\\OUTTaxLedger\\": "src/"
     }
   },
   "minimum-stability": "dev",
@@ -34,7 +28,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Seat\\Metallhobler\\OUT-TaxLedger\\OUTTaxLedgerServiceProvider"
+        "metallhobler\\Seat\\OUTTaxLedger\\OUTTaxLedgerServiceProvider"
       ]
     }
   }
