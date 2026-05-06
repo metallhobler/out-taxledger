@@ -15,14 +15,14 @@ return [
                 'label' => 'Mining Tax',
                 'icon' => 'fas fa-home',
                 'route' => 'out-taxledger.miningtax',
-                'permission' => 'out-taxledger.personalminingtaxview'
+                'permission' => 'outtaxledger.personalminingtaxview'
             ],
             [
                 'name' => 'out-taxledger-home-mining-log',
                 'label' => 'Ratting Tax',
                 'icon' => 'fas fa-table',
                 'route' => 'out-taxledger.rattingtax',
-                'permission' => 'out-taxledger.corprattingtaxview'
+                'permission' => 'outtaxledger.corprattingtaxview'
             ],
         ],
     ],
