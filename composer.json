@@ -14,7 +14,7 @@
       "Seat\\Metallhobler\\OUT-TaxLedger\\": "src/"
     }
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "dev-main",
   "prefer-stable": true,
   "require": {
     "php": "^8.1",
