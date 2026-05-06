@@ -12,17 +12,17 @@ return [
         'entries' => [
             [
                 'name' => 'out-taxledger-home-sub-menu',
-                'label' => 'out-taxledger::menu.sub-home-level',
+                'label' => 'Mining Tax',
                 'icon' => 'fas fa-home',
-                'route' => 'out-taxledger.home',
-                'permission' => 'out-taxledger.view'
+                'route' => 'out-taxledger.miningtax',
+                'permission' => 'out-taxledger.personalminingtaxview'
             ],
             [
                 'name' => 'out-taxledger-home-mining-log',
-                'label' => 'out-taxledger::menu.sub-mining-log',
+                'label' => 'Ratting Tax',
                 'icon' => 'fas fa-table',
-                'route' => 'out-taxledger.logbook',
-                'permission' => 'out-taxledger.view'
+                'route' => 'out-taxledger.rattingtax',
+                'permission' => 'out-taxledger.corprattingtaxview'
             ],
         ],
     ],
