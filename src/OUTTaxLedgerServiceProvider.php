@@ -36,7 +36,7 @@ class OUTTaxLedgerServiceProvider extends AbstractSeatPlugin
         $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.sidebar.php', 'package.sidebar');
 
         // Register generic permissions
-        //$this->registerPermissions(__DIR__ . '/Config/Permissions/corpminingtax.php', 'corpminingtax');
+        $this->registerPermissions(__DIR__ . '/Config/Permissions/corpminingtax.php', 'corpminingtax');
     }
 
     public function getName(): string
