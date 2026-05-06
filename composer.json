@@ -9,6 +9,12 @@
       "email": "mwieber85@googlemail.com"
     }
   ],
+  "repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com"
+    }
+],
   "autoload": {
     "psr-4": {
       "Seat\\Metallhobler\\OUT-TaxLedger\\": "src/"
