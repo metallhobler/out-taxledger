@@ -9,6 +9,7 @@ return [
         'plural' => true,
         'icon' => 'fas fa-certificate',
         'route_segment' => 'out-taxledger',
+        'permission' => 'outtaxledger.personalminingtaxview',
         'entries' => [
             [
                 'name' => 'out-taxledger-home-sub-menu',
