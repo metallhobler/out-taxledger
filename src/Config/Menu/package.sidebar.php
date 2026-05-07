@@ -8,22 +8,21 @@ return [
         'label' => 'Testmenu OUT',
         'plural' => true,
         'icon' => 'fas fa-certificate',
-        'route_segment' => 'out-taxledger',
-        'permission' => 'outtaxledger.personalminingtaxview',
+        'route_segment' => 'out-taxledger',        
         'entries' => [
             [
                 'name' => 'out-taxledger-home-sub-menu',
                 'label' => 'Mining Tax',
                 'icon' => 'fas fa-home',
                 'route' => 'out-taxledger.miningtax',
-                'permission' => 'outtaxledger.personalminingtaxview'
+                'permission' => 'out-taxledger.personalminingtaxview'
             ],
             [
                 'name' => 'out-taxledger-home-mining-log',
                 'label' => 'Ratting Tax',
                 'icon' => 'fas fa-table',
                 'route' => 'out-taxledger.rattingtax',
-                'permission' => 'outtaxledger.corprattingtaxview'
+                'permission' => 'out-taxledger.corprattingtaxview'
             ],
         ],
     ],
