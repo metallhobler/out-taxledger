@@ -12,6 +12,13 @@ return [
         'permission' => 'out-taxledger.generalmenu',
         'entries' => [
             [
+                'name' => 'out-taxledger-home',
+                'label' => 'Home Sweet Home',
+                'icon' => 'fab fa-fort-awesome',
+                'route' => 'out-taxledger.home',
+                'permission' => 'out-taxledger.miningtaxview',
+            ],
+            [
                 'name' => 'out-taxledger-miningtax',
                 'label' => 'Mining Tax',
                 'icon' => 'fab fa-fort-awesome',
