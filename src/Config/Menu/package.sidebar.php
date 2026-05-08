@@ -16,12 +16,14 @@ return [
         'plural' => true,
         'icon' => 'fas fa-city',
         'route_segment' => 'test3',
+        'permission' => 'out-taxledger.personalminingtaxview',
         'entries' => [
             [
                 'name' => 'all test3',
                 'label' => 'Test 3',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seatcore::alliance.list',
+                'permission' => 'out-taxledger.corprattingtaxview',
             ],
         ],
     ],
