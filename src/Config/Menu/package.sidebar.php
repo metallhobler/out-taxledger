@@ -4,25 +4,24 @@
  */
 return [
     'out-taxledger' => [
-        'name' => 'menu-entry-name',
-        'label' => 'Testmenu OUT',
+        'name' => 'home',
+        'label' => 'Test 1',
+        'icon' => 'fas fa-home',
+        'route_segment' => 'home',
+        'route' => 'seatcore::home',
+    ],
+    'alliance' => [
+        'name' => 'alliance',
+        'label' => 'Test 2',
         'plural' => true,
-        'icon' => 'fas fa-certificate',
-        'route_segment' => 'out-taxledger',        
+        'icon' => 'fas fa-city',
+        'route_segment' => 'alliances',
         'entries' => [
             [
-                'name' => 'out-taxledger-home-sub-menu',
-                'label' => 'Mining Tax',
-                'icon' => 'fas fa-home',
-                'route' => 'out-taxledger.miningtax',
-                'permission' => 'out-taxledger.personalminingtaxview'
-            ],
-            [
-                'name' => 'out-taxledger-home-mining-log',
-                'label' => 'Ratting Tax',
-                'icon' => 'fas fa-table',
-                'route' => 'out-taxledger.rattingtax',
-                'permission' => 'out-taxledger.corprattingtaxview'
+                'name' => 'all alliances',
+                'label' => 'Test 3',
+                'icon' => 'fab fa-fort-awesome',
+                'route' => 'seatcore::alliance.list',
             ],
         ],
     ],
