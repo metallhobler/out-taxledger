@@ -12,28 +12,28 @@ return [
         'permission' => 'out-taxledger.generalmenu',
         'entries' => [
             [
-                'name' => 'outminingtax',
+                'name' => 'out-taxledger-miningtax',
                 'label' => 'Mining Tax',
                 'icon' => 'fab fa-fort-awesome',
-                'route' => 'seatcore::alliance.list',
+                'route' => '::alliance.list',
                 'permission' => 'out-taxledger.miningtaxview',
             ],
             [
-                'name' => 'outcorprat',
+                'name' => 'out-taxledger-corprat',
                 'label' => 'Corp Ratting',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seatcore::alliance.list',
                 'permission' => 'out-taxledger.corprattingtaxview',
             ],
             [
-                'name' => 'outalliancerat',
+                'name' => 'out-taxledger-alliancerat',
                 'label' => 'Alliance Ratting',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seatcore::alliance.list',
                 'permission' => 'out-taxledger.alliancerattingtaxview',
             ],
             [
-                'name' => 'outsettings',
+                'name' => 'out-taxledger-settings',
                 'label' => 'Settings',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seatcore::alliance.list',
