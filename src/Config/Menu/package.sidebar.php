@@ -10,15 +10,15 @@ return [
         'route_segment' => 'home',
         'route' => 'seatcore::home',
     ],
-    'alliance' => [
+    'out-taxledger2' => [
         'name' => 'alliance',
         'label' => 'Test 2',
         'plural' => true,
         'icon' => 'fas fa-city',
-        'route_segment' => 'alliances',
+        'route_segment' => 'test3',
         'entries' => [
             [
-                'name' => 'all alliances',
+                'name' => 'all test3',
                 'label' => 'Test 3',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seatcore::alliance.list',
