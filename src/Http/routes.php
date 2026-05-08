@@ -8,23 +8,23 @@ Route::group([
         ->group(function () {
 
             Route::get('/')
-                ->name('out-taxledger.home')
-                ->uses('CorpMiningOverviewController@getHome');
+                ->name('out-taxledger.home');
+                //->uses('CorpMiningOverviewController@getHome');
 
             Route::get('/miningtax')
-                ->name('out-taxledger.miningtax')
-                ->uses('CorpMiningLog@index');
+                ->name('out-taxledger.miningtax');
+                //->uses('CorpMiningLog@index');
 
             Route::get('/corprat')
-                ->name('out-taxledger.corprat')
-                ->uses('CorpMiningLog@index');
+                ->name('out-taxledger.corprat');
+                //->uses('CorpMiningLog@index');
 
             Route::get('/alliancerat')
-                ->name('out-taxledger.alliancerat')
-                ->uses('CorpMiningLog@index');
-                
+                ->name('out-taxledger.alliancerat');
+                //->uses('CorpMiningLog@index');
+
             Route::get('/settings')
-                ->name('out-taxledger.settings')
-                ->uses('CorpMiningLog@index');
+                ->name('out-taxledger.settings');
+                //->uses('CorpMiningLog@index');
         });
 });
