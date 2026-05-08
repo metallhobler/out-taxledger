@@ -8,23 +8,23 @@ Route::group([
         ->group(function () {
 
             Route::get('/')
-                ->name('out-taxledger.home');
+                ->name('seat-outsmarted::home');
                 //->uses('CorpMiningOverviewController@getHome');
 
             Route::get('/miningtax')
-                ->name('out-taxledger.miningtax');
+                ->name('seat-outsmarted::miningtax');
                 //->uses('CorpMiningLog@index');
 
             Route::get('/corprat')
-                ->name('out-taxledger.corprat');
+                ->name('seat-outsmarted::corprat');
                 //->uses('CorpMiningLog@index');
 
             Route::get('/alliancerat')
-                ->name('out-taxledger.alliancerat');
+                ->name('seat-outsmarted::alliancerat');
                 //->uses('CorpMiningLog@index');
 
             Route::get('/settings')
-                ->name('out-taxledger.settings');
+                ->name('seat-outsmarted::settings');
                 //->uses('CorpMiningLog@index');
         });
 });
