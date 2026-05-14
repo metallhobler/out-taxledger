@@ -104,7 +104,7 @@ class SeatOutsmartedController extends Controller
         $periods = $this->getCorporationLedgerPeriods($ref_types);
         $entries = $this->getCorporationLedgerByMonth($group_column, $ref_types, $year, $month);
 
-        return view('web::corporation.ledger.bounty_prizes',
+        return view('seat-outsmarted::alliancerat',
             compact('periods', 'entries', 'month', 'year'));
     }
 
