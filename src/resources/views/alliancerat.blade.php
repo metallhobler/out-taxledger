@@ -53,16 +53,8 @@
                 <table class="table" id="events">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Start</th>
-                        <th>Event</th>
-                        <th>Duration</th>
-                        <th>Tax Rate</th>
-                        <th>Total Income ISK</th>
-                        <th>Tracking</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                        <th>Hidden</th>
+                        <th>{{ trans_choice('web::seat.name', 1) }}</th>
+                        <th>{{ trans_choice('web::seat.total', 1) }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -86,9 +78,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                <p>
-                    
-                    </p>
             </div>
         </div>
         <div class="card-footer">
