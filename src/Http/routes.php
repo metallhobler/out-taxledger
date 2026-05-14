@@ -1,7 +1,7 @@
 <?php
 
 Route::group([
-    'namespace'  => 'metallhobler\Seat\OutTaxledger\Http\Controllers',
+    'namespace'  => 'metallhobler\Seat\OUTTaxLedger\Http\Controllers',
     'middleware' => ['web', 'auth', 'locale'],
 ], function () {
     Route::prefix('/out-taxledger')
@@ -10,7 +10,7 @@ Route::group([
             Route::get('/')
                 ->name('seat-outsmarted::home');
                 ->uses('SeatOutsmartedController@index');
-/*
+
             Route::get('/miningtax')
                 ->name('seat-outsmarted::miningtax');
                 //->uses('CorpMiningLog@index');
@@ -26,6 +26,5 @@ Route::group([
             Route::get('/settings')
                 ->name('seat-outsmarted::settings');
                 //->uses('CorpMiningLog@index');
-*/                
         });
 });
