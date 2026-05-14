@@ -12,19 +12,19 @@ Route::group([
                 ->uses('SeatOutsmartedController@index');
 
             Route::get('/miningtax')
-                ->name('seat-outsmarted::miningtax');
-                //->uses('CorpMiningLog@index');
+                ->name('seat-outsmarted::miningtax')
+                ->uses('SeatOutsmartedController@miningtax');
 
             Route::get('/corprat')
-                ->name('seat-outsmarted::corprat');
-                //->uses('CorpMiningLog@index');
+                ->name('seat-outsmarted::corprat')
+                ->uses('SeatOutsmartedController@corprat');
 
             Route::get('/alliancerat')
-                ->name('seat-outsmarted::alliancerat');
-                //->uses('CorpMiningLog@index');
+                ->name('seat-outsmarted::alliancerat')
+                ->uses('SeatOutsmartedController@alliancerat');
 
             Route::get('/settings')
-                ->name('seat-outsmarted::settings');
-                //->uses('CorpMiningLog@index');
+                ->name('seat-outsmarted::settings')
+                ->uses('SeatOutsmartedController@settings');
         });
 });
