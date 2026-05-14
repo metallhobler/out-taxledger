@@ -10,9 +10,9 @@ class OUTTaxLedgerServiceProvider extends AbstractSeatPlugin
 {
     public function boot()
     {
-        /*
+       
         $this->add_routes();
-
+        /*
         $this->add_publications();
 
         $this->add_views();
@@ -59,5 +59,11 @@ class OUTTaxLedgerServiceProvider extends AbstractSeatPlugin
         return "metallhobler";
     }
 
-
+    /**
+     * Include routes.
+     */
+    private function add_routes()
+    {
+        $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
+    }
 }
