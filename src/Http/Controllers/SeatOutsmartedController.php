@@ -98,7 +98,7 @@ class SeatOutsmartedController extends Controller
         $year = is_null($year) ? date('Y') : $year;
         $month = is_null($month) ? date('m') : $month;
 
-        $group_column = 'second_party_id';
+        $group_column = 'corporation_id';
         $ref_types = ['bounty_prizes', 'bounty_prize', 'ess_escrow_transfer', 'corporate_reward_payout', 'agent_mission_reward', 'agent_mission_time_bonus_reward'];
 
         $periods = $this->getCorporationLedgerPeriods($ref_types);
@@ -138,7 +138,7 @@ class SeatOutsmartedController extends Controller
             ->whereIn('ref_type', $ref_types)
             ->whereYear('date', ! is_null($year) ? $year : date('Y'))
             ->whereMonth('date', ! is_null($month) ? $month : date('m'))
-            ->groupBy('corporation_id', $group_field)
+            //->groupBy('corporation_id', $group_field)
             ->orderBy('total', 'desc')
             ->get();
     }
