@@ -12,10 +12,12 @@ class OUTTaxLedgerServiceProvider extends AbstractSeatPlugin
     {
        
         $this->add_routes();
+
+        $this->add_views();
         /*
         $this->add_publications();
 
-        $this->add_views();
+        
 
         $this->add_translations();
 
@@ -65,5 +67,13 @@ class OUTTaxLedgerServiceProvider extends AbstractSeatPlugin
     private function add_routes()
     {
         $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
+    }
+
+    /**
+     * Import views.
+     */
+    private function add_views()
+    {
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'alliancerat');
     }
 }
