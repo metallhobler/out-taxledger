@@ -9,8 +9,8 @@ Route::group([
 
             Route::get('/')
                 ->name('seat-outsmarted::home');
-                //->uses('CorpMiningOverviewController@getHome');
-
+                ->uses('SeatOutsmartedController@index');
+/*
             Route::get('/miningtax')
                 ->name('seat-outsmarted::miningtax');
                 //->uses('CorpMiningLog@index');
@@ -26,5 +26,6 @@ Route::group([
             Route::get('/settings')
                 ->name('seat-outsmarted::settings');
                 //->uses('CorpMiningLog@index');
+*/                
         });
 });
