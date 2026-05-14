@@ -57,6 +57,7 @@ class SeatOutsmartedController extends Controller
         return view('corpminingtax::corpmininglog', ['miningdata' => $miningdata]);
     }
 
+
     public function alliancerat()
     {
         $character = auth()->user()->main_character['character_id'];

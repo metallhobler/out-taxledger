@@ -26,5 +26,6 @@ Route::group([
             Route::get('/settings')
                 ->name('seat-outsmarted::settings')
                 ->uses('SeatOutsmartedController@settings');
+                
         });
 });
