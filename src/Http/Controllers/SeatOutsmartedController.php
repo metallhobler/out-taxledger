@@ -92,7 +92,7 @@ class SeatOutsmartedController extends Controller
      * @param  int|null  $month
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function getBountyPrizesByMonth(CorporationInfo $corporation, ?int $year = null, ?int $month = null)
+    public function getBountyPrizesByMonth(?int $year = null, ?int $month = null)
     {
         $year = is_null($year) ? date('Y') : $year;
         $month = is_null($month) ? date('m') : $month;
@@ -100,8 +100,8 @@ class SeatOutsmartedController extends Controller
         $group_column = 'second_party_id';
         $ref_types = ['bounty_prizes', 'bounty_prize', 'ess_escrow_transfer', 'corporate_reward_payout', 'agent_mission_reward', 'agent_mission_time_bonus_reward'];
 
-        $periods = $this->getCorporationLedgerPeriods($corporation->corporation_id, $ref_types);
-        $entries = $this->getCorporationLedgerByMonth($corporation->corporation_id, $group_column, $ref_types, $year, $month);
+        $periods = $this->getCorporationLedgerPeriods($ref_types);
+        $entries = $this->getCorporationLedgerByMonth($group_column, $ref_types, $year, $month);
 
         return view('web::corporation.ledger.bounty_prizes',
             compact('periods', 'entries', 'corporation', 'month', 'year'));
@@ -112,7 +112,7 @@ class SeatOutsmartedController extends Controller
      * @param  string[]  $ref_types
      * @return \Seat\Eveapi\Models\Wallet\CorporationWalletJournal[]
      */
-    private function getCorporationLedgerPeriods(int $corporation_id, array $ref_types)
+    private function getCorporationLedgerPeriods(array $ref_types)
     {
         return CorporationWalletJournal::select(DB::raw('DISTINCT EXTRACT(MONTH FROM date) as month, EXTRACT(YEAR FROM date) as year'))
             //->where('corporation_id', $corporation_id)
@@ -130,11 +130,7 @@ class SeatOutsmartedController extends Controller
      * @param  int|null  $month
      * @return \Illuminate\Support\Collection
      */
-    private function getCorporationLedgerByMonth(int $corporation_id,
-                                                 string $group_field,
-                                                 array $ref_types,
-                                                 ?int $year = null,
-                                                 ?int $month = null): Collection
+    private function getCorporationLedgerByMonth(string $group_field, array $ref_types, ?int $year = null, ?int $month = null): Collection
     {
         return CorporationWalletJournal::select(DB::raw('ROUND(SUM(amount)) as total'), $group_field)
             //->where('corporation_id', $corporation_id)
