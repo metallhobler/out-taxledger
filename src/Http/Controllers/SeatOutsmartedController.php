@@ -105,7 +105,7 @@ class SeatOutsmartedController extends Controller
         $entries = $this->getCorporationLedgerByMonth($group_column, $ref_types, $year, $month);
 
         return view('out-taxledger::alliancerat',
-            compact('periods', 'entries', 'month', 'year'));
+            compact('corporation_id', 'periods', 'entries', 'month', 'year'));
     }
 
     /**
@@ -115,7 +115,7 @@ class SeatOutsmartedController extends Controller
      */
     private function getCorporationLedgerPeriods(array $ref_types)
     {
-        return CorporationWalletJournal::select(DB::raw('DISTINCT EXTRACT(MONTH FROM date) as month, EXTRACT(YEAR FROM date) as year'))
+        return CorporationWalletJournal::select(DB::raw('DISTINCT EXTRACT(MONTH FROM date) as month, EXTRACT(YEAR FROM date) as year, corporation_id'))
             //->where('corporation_id', $corporation_id)
             ->whereIn('ref_type', $ref_types)
             ->orderBy('year', 'desc')
@@ -138,7 +138,7 @@ class SeatOutsmartedController extends Controller
             ->whereIn('ref_type', $ref_types)
             ->whereYear('date', ! is_null($year) ? $year : date('Y'))
             ->whereMonth('date', ! is_null($month) ? $month : date('m'))
-            ->groupBy($group_field)
+            ->groupBy('corporation_id', $group_field)
             ->orderBy('total', 'desc')
             ->get();
     }

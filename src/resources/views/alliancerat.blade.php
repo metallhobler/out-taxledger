@@ -66,33 +66,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($events as $event)
-                        <tr id="tr_{{ $event->id }}">
-                            <td>{{ date("Y-m-d", strtotime($event->event_start)) }}</td>
-                            <td>{{ date("H:i", strtotime($event->event_start)) }}</td>
-                            <td><b>{{ $event->event_name }}</b></td>
-                            <td>{{ $event->event_duration }} hours</td>
-                            <td>{{ $event->event_tax }} %</td>
-                            <td>{{ number_format($event->total) }}</td>
-                            @if ($event->event_tracker == "automatic")
-                                <td><h5><span class="badge badge-warning">auto</span></h5></td>
-                            @else
-                                <td><h5><span class="badge badge-info">manually</span></h5></td>
-                            @endif
-                            @if ($event->event_status == 1)
-                                <td id="s_{{ $event->id }}"><h5><span class="badge badge-info">new</span></h5></td>
-                            @elseif ($event->event_status == 2)
-                                <td id="s_{{ $event->id }}"><h5><span class="badge badge-warning">running</span></h5></td>
-                            @elseif ($event->event_status == 3)
-                                <td id="s_{{ $event->id }}"><h5><span class="badge badge-success">complete</span></h5></td>
-                            @endif
-                            <td>
-                                <button class="btn btn-warning details" id="d_{{ $event->id }}" data-toggle="modal" data-target="#modal_detail">Edit</button>
-                                <button class="btn btn-danger delete" id="r_{{ $event->id }}">Delete</button>
-                            </td>
-                            <td>{{ $event->event_status }}</td>
-                        </tr>
-                    @endforeach
+                    @php
+                     var_dump($entries)   
+                    @endphp
                     </tbody>
                 </table>
                 <div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
