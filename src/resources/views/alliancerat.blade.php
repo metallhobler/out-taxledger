@@ -20,7 +20,14 @@
                     @foreach ($entries as $entry)
                         <tr>
                         <td data-order="{{ $entry->second_party->name }}">
-                            @include('web::partials.corporation', ['corporation' => $entry->corporation_id])
+                            @php
+                                $corp_info = \Seat\Eveapi\Models\Corporation\CorporationInfo::find($entry->corporation_id);
+                            @endphp
+                            @if($corp_info)
+                                {{ $corp_info->name }}
+                            @else
+                                <p>UNKNOWN</p>
+                            @endif
                         </td>
                         
                         <td data-order="{{ $entry->total }}">{{ number_format($entry->total) }}
