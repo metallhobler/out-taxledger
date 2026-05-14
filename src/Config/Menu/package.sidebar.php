@@ -29,14 +29,14 @@ return [
                 'name' => 'out-taxledger-corprat',
                 'label' => 'Corp Ratting',
                 'icon' => 'fab fa-fort-awesome',
-                'route' => 'seat-outsmarted::corprattingtax',
+                'route' => 'seat-outsmarted::corprat',
                 'permission' => 'out-taxledger.corprattingtaxview',
             ],
             [
                 'name' => 'out-taxledger-alliancerat',
                 'label' => 'Alliance Ratting',
                 'icon' => 'fab fa-fort-awesome',
-                'route' => 'seat-outsmarted::alliancerattingtax',
+                'route' => 'seat-outsmarted::alliancerat',
                 'permission' => 'out-taxledger.alliancerattingtaxview',
             ],
             [
