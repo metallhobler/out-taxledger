@@ -19,9 +19,9 @@ Route::group([
                 ->name('seat-outsmarted::corprat')
                 ->uses('SeatOutsmartedController@corprat');
 
-            Route::get('/alliancerat')
+            Route::get('/alliancerat/{year?}/{month?}')
                 ->name('seat-outsmarted::alliancerat')
-                ->uses('SeatOutsmartedController@alliancerat');
+                ->uses('SeatOutsmartedController@getBountyPrizesByMonth');
 
             Route::get('/settings')
                 ->name('seat-outsmarted::settings')
