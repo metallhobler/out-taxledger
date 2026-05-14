@@ -74,6 +74,6 @@ class OUTTaxLedgerServiceProvider extends AbstractSeatPlugin
      */
     private function add_views()
     {
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'alliancerat');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'out-taxledger');
     }
 }
