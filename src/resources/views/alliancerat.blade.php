@@ -52,9 +52,8 @@
                             @else
                                 <p>UNKNOWN</p>
                             @endif
-                        </td>
-                        
-                        <td data-order="{{ $entry->total }}">{{ number_format($entry->total) }}</td>
+                        </td>                        
+                        <td data-order="{{ $entry->total }}">{{ number_format((5/$corp_info->tax_rate)*$entry->total) }}</td>
                         </tr>
                     @endforeach
                 </tbody>
