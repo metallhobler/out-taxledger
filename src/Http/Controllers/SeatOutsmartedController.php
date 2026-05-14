@@ -138,7 +138,7 @@ class SeatOutsmartedController extends Controller
             ->whereIn('ref_type', $ref_types)
             ->whereYear('date', ! is_null($year) ? $year : date('Y'))
             ->whereMonth('date', ! is_null($month) ? $month : date('m'))
-            //->groupBy('corporation_id', $group_field)
+            ->groupBy('corporation_id')
             ->orderBy('total', 'desc')
             ->get();
     }
