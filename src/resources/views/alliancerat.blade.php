@@ -30,11 +30,7 @@
                             @endif
                         </td>
                         
-                        <td data-order="{{ $entry->total }}">{{ number_format($entry->total) }}
-                            @php
-                             print_r($entry)   
-                            @endphp
-                        </td>
+                        <td data-order="{{ $entry->total }}">{{ number_format($entry->total) }}</td>
                         </tr>
                     @endforeach
                 </tbody>
