@@ -7,30 +7,12 @@
         <div class="card-header">
             <h4>Alliance Taxes</h4>
         </div>
-        <div class="card-body">
-            <form action="{{ route('corpminingtax.createevent') }}" method="post" id="new-event" name="new-event">
-                {{ csrf_field() }}
-                <div class="form-row">
-                    <div class="col">
-                        <label for="duration">Year</label>
-                        <input type="number" class="form-control" id="year" name="year">
-                    </div>
-                    <div class="col">
-                        <label for="taxrate">Month</label>
-                        <input type="number" class="form-control" id="month" name="month">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <button type="submit" class="btn btn-primary" id="send">Show</button>
-                </div>
-            </form>
-        </div>
-        
+
         <div class="card-body">
             <table class="table" id="events">
                 <thead>
                 <tr>
-                    <th>{{ trans_choice('web::seat.name', 1) }}</th>
+                    <th>{{ trans_choice('web::seat.alliance', 1) }}</th>
                     <th>{{ trans_choice('web::seat.total', 1) }}</th>
                 </tr>
                 </thead>
@@ -50,7 +32,12 @@
                             @break
                             @endswitch
                         </td>
-                        <td data-order="{{ $entry->total }}">{{ number_format($entry->total) }}</td>
+                        
+                        <td data-order="{{ $entry->total }}">{{ number_format($entry->total) }}
+                            @php
+                             print_r($entry)   
+                            @endphp
+                        </td>
                         </tr>
                     @endforeach
                 </tbody>
