@@ -4,7 +4,7 @@ Route::group([
     'namespace'  => 'metallhobler\Seat\OUTTaxLedger\Http\Controllers',
     'middleware' => ['web', 'auth', 'locale'],
 ], function () {
-    Route::prefix('/out-taxledger')
+    Route::prefix('/outsmarted')
         ->group(function () {
 
             Route::get('/')
@@ -26,6 +26,6 @@ Route::group([
             Route::get('/settings')
                 ->name('seat-outsmarted::settings')
                 ->uses('SeatOutsmartedController@settings');
-                
+
         });
 });
