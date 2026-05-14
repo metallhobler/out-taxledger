@@ -105,7 +105,7 @@ class SeatOutsmartedController extends Controller
         $entries = $this->getCorporationLedgerByMonth($group_column, $ref_types, $year, $month);
 
         return view('out-taxledger::alliancerat',
-            compact('corporation_id', 'periods', 'entries', 'month', 'year'));
+            compact('periods', 'entries', 'month', 'year'));
     }
 
     /**
