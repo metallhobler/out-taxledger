@@ -8,7 +8,7 @@ return [
         'label' => 'OUTSmarted',
         'plural' => true,
         'icon' => 'fas fa-city',
-        'route_segment' => 'outsmarted',
+        'route_segment' => 'seat-outsmarted',
         'permission' => 'out-taxledger.generalmenu',
         'entries' => [
             [
