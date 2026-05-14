@@ -37,6 +37,7 @@
                 <thead>
                 <tr>
                     <th>{{ trans_choice('web::seat.corporation', 1) }}</th>
+                    <th>{{ trans_choice('web::seat.tax_rate', 1) }}</th>
                     <th>{{ trans_choice('web::seat.total', 1) }}</th>
                 </tr>
                 </thead>
@@ -52,8 +53,11 @@
                             @else
                                 <p>UNKNOWN</p>
                             @endif
-                        </td>                        
-                        <td data-order="{{ $entry->total }}">{{ number_format((5/$corp_info->tax_rate)*$entry->total) }}</td>
+                        </td>
+                        <td>
+                            {{ $corp_info->tax_rate }}
+                        </td>                    
+                        <td data-order="{{ $entry->total }}">{{ number_format((0.05/$corp_info->tax_rate)*$entry->total) }}</td>
                         </tr>
                     @endforeach
                 </tbody>
