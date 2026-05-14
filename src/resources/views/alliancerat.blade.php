@@ -55,7 +55,7 @@
                             @endif
                         </td>
                         <td>
-                            {{ $corp_info->tax_rate }}
+                            {{ $corp_info->tax_rate*100 }}&#37;
                         </td>                    
                         <td data-order="{{ $entry->total }}">{{ number_format((0.05/$corp_info->tax_rate)*$entry->total) }}</td>
                         </tr>
