@@ -65,11 +65,11 @@
                         <th>Hidden</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody><p>
                     @php
-                     var_dump($entries)   
+                     print_r($entries)   
                     @endphp
-                    </tbody>
+                    </p></tbody>
                 </table>
                 <div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
