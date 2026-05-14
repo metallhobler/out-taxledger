@@ -1,21 +1,8 @@
 @extends('web::layouts.grids.12')
 
-@section('title', trans('corpminingtax::global.browser_title'))
-
-@push('head')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-@endpush
+@section('title', 'Alliance wide ratting tax'))
 
 @section('full')
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div> 
-    @endif
     <div class="card">
         <div class="card-header">
             <h4>Create Event</h4>
@@ -24,48 +11,22 @@
             <form action="{{ route('corpminingtax.createevent') }}" method="post" id="new-event" name="new-event">
                 {{ csrf_field() }}
                 <div class="form-row">
-                        <label for="event">Event Name</label>
-                        <input type="text" class="form-control" id="event" name="event">
-                </div>
-                <div class="form-row">
-                    <div class="col-6">
-                        <label for="start">Start Date</label>
-                        <input type='text' class="form-control datepicker" id="start" name="start" placeholder="Select Date..">
+                    <div class="col">
+                        <label for="duration">Year</label>
+                        <input type="number" class="form-control" id="year" name="year">
                     </div>
                     <div class="col">
-                        <label for="duration">Duration <small>hours</small></label>
-                        <input type="number" class="form-control" id="duration" name="duration">
-                    </div>
-                    <div class="col">
-                        <label for="taxrate">Tax Rate %</label>
-                        <input type="number" class="form-control" id="taxrate" name="taxrate">
-                    </div>
-                    <div class="col">
-                        <label for="valuation">Valuation</label>
-                        <select class="custom-select mr-sm-2" name="valuation" id="valuation">
-                            <option value="none" selected>none</option>
-                            <option value="less">less tax</option>
-                            <option value="plus">plus tax</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label for="event_tracker">Event Tracking</label>
-                        <select class="custom-select mr-sm-2" name="event_tracker" id="event_tracker">
-                            <option value="enable">automatic</option>
-                            <option value="disable" selected>manual</option>
-                        </select>
+                        <label for="taxrate">Month</label>
+                        <input type="number" class="form-control" id="month" name="month">
                     </div>
                 </div>
                 <div class="form-row">
-                    <bolt><small>*Valuation</small> less tax = deduct from tax &nbsp;&nbsp;plus tax = plus event tax to tax &nbsp;&nbsp;none=don't tax</bolt>
-                </div>
-                <div class="form-row">
-                    <button type="submit" class="btn btn-primary" id="send">Add Event</button>
+                    <button type="submit" class="btn btn-primary" id="send">Show</button>
                 </div>
             </form>
         </div>
     </div>
-    @isset($events)
+
         <div class="card">
             <div class="card-header">
                 <h3>Corp Mining Events</h3>
@@ -153,112 +114,5 @@
                 </div>
             </div>
         </div>
-    @endisset
 @stop
-@push('javascript')
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        $(document).ready(function() {
-            dataTable = $('#events').DataTable({
-                "columnDefs": [
-                    {
-                        "targets": [9],
-                        "visible": false
-                    }
-                ]
-            });
-
-            $('.datepicker').flatpickr({
-                enableTime: true,
-                dateFormat: "Y-m-d H:i",
-                time_24hr: true,
-            });
-
-            $('.status-dropdown').on('change', function (e) {
-                var status = $(this).val();
-                $('.status-dropdown').val(status)
-                console.log(status)
-                dataTable.column(9).search(status).draw();
-            });
-
-            $('#events').on('click', '.details', function(e) {
-                var cid = $(this).attr('id');
-                cid = cid.replace('d_', '');
-                var url = "{{ route('corpminingtax.eventdetails', [':eid']) }}";
-                url = url.replace(':eid', cid);
-                $.ajax({
-                    url: url,
-                    type: "GET",
-                    datatype: 'json',
-                    timeout: 10000,
-                    success: function (data) {
-                        $('.modal-body').html(data);
-                        $('#modal_detail').modal('show');
-                    }
-                });
-            });
-
-            $('.add-mining').on('click', function() {
-                var cid = $(this).attr('id');
-                cid = cid.replace('a_', '');
-                document.getElementById('deb').innerText = $('#character').val();
-                if (cid > 0) {
-                    var url = "{{ route('corpminingtax.addmining') }}";
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            eid: cid,
-                            character: $('#character').val(),
-                            ore: $('#ore').val(),
-                        }
-                    });
-                }
-            });
-
-            $('#modal_detail').on('click', '.remove', function() {
-                var cid = $(this).attr('id');
-                cid = cid.replace('r_', '');
-                if (cid > 0) {
-                    var url = "{{ route('corpminingtax.removeeventmining') }}";
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            cid: cid,
-                        },
-                        success: function () {
-                            var tag_mod = "#mod_" + cid;
-                            $(tag_mod).remove();
-                        }
-                    });
-                }
-            });
-
-            $('#events').on('click', '.delete', function() {
-                var cid = $(this).attr('id');
-                cid = cid.replace('r_', '');
-                if (cid > 0) {
-                    var url = "{{ route('corpminingtax.removeevent') }}";
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            cid: cid,
-                        },
-                        success: function () {
-                            var tag = "#tr_" + cid;
-                            $(tag).remove();
-                        }
-                    });
-                }
-            });
-
-        });
-
-    </script>
-@endpush
 
