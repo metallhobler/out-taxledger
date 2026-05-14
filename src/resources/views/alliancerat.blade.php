@@ -1,6 +1,6 @@
 @extends('web::layouts.grids.12')
 
-@section('title', 'Alliance wide ratting tax'))
+@section('title', 'Alliance wide ratting tax')
 
 @section('full')
     <div class="card">
