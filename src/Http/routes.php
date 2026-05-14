@@ -8,7 +8,7 @@ Route::group([
         ->group(function () {
 
             Route::get('/')
-                ->name('seat-outsmarted::home');
+                ->name('seat-outsmarted::home')
                 ->uses('SeatOutsmartedController@index');
 
             Route::get('/miningtax')
