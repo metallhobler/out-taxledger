@@ -5,13 +5,13 @@
 return [
     'outsmarted' => [
         'name' => 'outsmarted',
-        'label' => 'OUTSmarted',
+        'label' => 'OUTsmarted',
         'plural' => true,
         'icon' => 'fas fa-city',
         'route_segment' => 'seat-outsmarted',
         'permission' => 'out-taxledger.generalmenu',
         'entries' => [
-            [
+            /*[
                 'name' => 'out-taxledger-home',
                 'label' => 'Home Sweet Home',
                 'icon' => 'fab fa-fort-awesome',
@@ -24,7 +24,7 @@ return [
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seat-outsmarted::miningtax',
                 'permission' => 'out-taxledger.miningtaxview',
-            ],
+            ],*/
             [
                 'name' => 'out-taxledger-corprat',
                 'label' => 'Corp Ratting',
@@ -39,13 +39,13 @@ return [
                 'route' => 'seat-outsmarted::alliancerat',
                 'permission' => 'out-taxledger.alliancerattingtaxview',
             ],
-            [
+            /*[
                 'name' => 'out-taxledger-settings',
                 'label' => 'Settings',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seat-outsmarted::settings',
                 'permission' => 'out-taxledger.settings',
-            ],
+            ],*/
         ],
     ],
 ];
