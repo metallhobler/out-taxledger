@@ -16,11 +16,11 @@ Route::group([
                 ->uses('SeatOutsmartedController@miningtax');
             */
     Route::get('/corprat')
-        ->name('seat-outsmarted::corprat')
+        ->name('outsmarted::corprat')
         ->uses('SeatOutsmartedController@corprat');
 
     Route::get('/alliancerat/{year?}/{month?}')
-        ->name('seat-outsmarted::alliancerat')
+        ->name('outsmarted::alliancerat')
         ->uses('SeatOutsmartedController@getBountyPrizesByMonth');
 
     /*Route::get('/settings')

@@ -8,7 +8,7 @@ return [
         'label' => 'OUTsmarted',
         'plural' => true,
         'icon' => 'fas fa-city',
-        'route_segment' => 'seat-outsmarted',
+        'route_segment' => 'outsmarted',
         'permission' => 'out-taxledger.generalmenu',
         'entries' => [
             /*[
@@ -29,14 +29,14 @@ return [
                 'name' => 'out-taxledger-corprat',
                 'label' => 'Corp Ratting',
                 'icon' => 'fab fa-fort-awesome',
-                'route' => 'seat-outsmarted::corprat',
+                'route' => 'outsmarted::corprat',
                 'permission' => 'out-taxledger.corprattingtaxview',
             ],
             [
                 'name' => 'out-taxledger-alliancerat',
                 'label' => 'Alliance Ratting',
                 'icon' => 'fab fa-fort-awesome',
-                'route' => 'seat-outsmarted::alliancerat',
+                'route' => 'outsmarted::alliancerat',
                 'permission' => 'out-taxledger.alliancerattingtaxview',
             ],
             /*[
