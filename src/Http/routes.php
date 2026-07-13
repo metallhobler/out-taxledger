@@ -15,7 +15,7 @@ Route::group([
                 ->name('seat-outsmarted::miningtax')
                 ->uses('SeatOutsmartedController@miningtax');
             */
-    Route::get('/corprat')
+    Route::get('/corprat/{year?}/{month?}')
         ->name('outsmarted::corprat')
         ->uses('SeatOutsmartedController@corprat');
 

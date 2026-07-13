@@ -24,14 +24,14 @@ return [
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'seat-outsmarted::miningtax',
                 'permission' => 'out-taxledger.miningtaxview',
-            ],*/
+            ],
             [
                 'name' => 'out-taxledger-corprat',
                 'label' => 'Corp Ratting',
                 'icon' => 'fab fa-fort-awesome',
                 'route' => 'outsmarted::corprat',
                 'permission' => 'out-taxledger.corprattingtaxview',
-            ],
+            ],*/
             [
                 'name' => 'out-taxledger-alliancerat',
                 'label' => 'Alliance Ratting',
