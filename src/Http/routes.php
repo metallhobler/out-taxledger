@@ -2,6 +2,7 @@
 
 Route::group([
     'namespace'  => 'metallhobler\Seat\OUTTaxLedger\Http\Controllers',
+    'prefix' => 'seat-outsmarted',
     'middleware' => ['web', 'auth', 'locale'],
 ], function () {
     Route::prefix('/outsmarted')
@@ -11,10 +12,10 @@ Route::group([
                 ->name('seat-outsmarted::home')
                 ->uses('SeatOutsmartedController@index');
 
-            Route::get('/miningtax')
+            /* Route::get('/miningtax')
                 ->name('seat-outsmarted::miningtax')
                 ->uses('SeatOutsmartedController@miningtax');
-
+            */
             Route::get('/corprat')
                 ->name('seat-outsmarted::corprat')
                 ->uses('SeatOutsmartedController@corprat');
@@ -23,9 +24,9 @@ Route::group([
                 ->name('seat-outsmarted::alliancerat')
                 ->uses('SeatOutsmartedController@getBountyPrizesByMonth');
 
-            Route::get('/settings')
+            /*Route::get('/settings')
                 ->name('seat-outsmarted::settings')
                 ->uses('SeatOutsmartedController@settings');
-
+            */
         });
 });
