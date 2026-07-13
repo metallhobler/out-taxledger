@@ -2,7 +2,7 @@
 
 Route::group([
     'namespace'  => 'metallhobler\Seat\OUTTaxLedger\Http\Controllers',
-    'prefix' => 'seat-outsmarted',
+    'prefix' => 'outsmarted',
     'middleware' => ['web', 'auth', 'locale'],
 ], function () {
     Route::prefix('/outsmarted')
